@@ -1,5 +1,5 @@
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CSEBA6U23I7
+set_global_assignment -name DEVICE 5CSEMA6U23A7
 set_global_assignment -name DEVICE_FILTER_PACKAGE UFBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
@@ -15,13 +15,6 @@ set_location_assignment PIN_U9 -to ADC_CONVST
 set_location_assignment PIN_V10 -to ADC_SCK
 set_location_assignment PIN_AC4 -to ADC_SDI
 set_location_assignment PIN_AD4 -to ADC_SDO
-
-#============================================================
-# ARDUINO
-#============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[*]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ARDUINO_IO[*]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to ARDUINO_IO[*]
 
 #============================================================
 # I2C LEDS/BUTTONS
@@ -135,11 +128,14 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HDMI_LRCLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HDMI_MCLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HDMI_SCLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HDMI_TX_*
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_D[*]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_DE
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_HS
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_VS
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_CLK
+
+#MiSTer_QMTECH: If not disabled the audio through HDMI will have crackles...
+#set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_D[*]
+#set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_DE
+#set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_HS
+#set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_VS
+#set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to HDMI_TX_CLK
+
 set_location_assignment PIN_U10 -to HDMI_I2C_SCL
 set_location_assignment PIN_AA4 -to HDMI_I2C_SDA
 set_location_assignment PIN_T13 -to HDMI_I2S
