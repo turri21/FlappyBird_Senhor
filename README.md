@@ -1,3 +1,5 @@
+Flappy Bird MiSTer QMTECH -- Tested: Working Video 720p, 1080p & Sound. You have to use a gamepad to play.
+
 # Flappy Bird
 
 Ported from original project [here](https://github.com/themaxaboy/Flappy-Bird-Verilog/).
