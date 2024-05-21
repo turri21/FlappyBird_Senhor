@@ -70,7 +70,7 @@ module sys_top
 //`else
 	//////////// VGA ///////////
 	
-	//MiSTer_QMTECH: Disable VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS to fix audio.
+	//Senhor: Disable VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS to fix audio.
 	//output  [5:0] VGA_R,
 	//output  [5:0] VGA_G,
 	//output  [5:0] VGA_B,
@@ -1317,7 +1317,7 @@ csync csync_vga(clk_vid, vga_hs_osd, vga_vs_osd, vga_cs_osd);
 
 	wire cs1 = (vga_fb | vga_scaler) ? vgas_cs : vga_cs;
    
-	//MiSTer_QMTECH: If you disable the following 5 statements, screen will go blank. 
+	//Senhor: If you disable the following 5 statements, screen will go blank. 
 	assign VGA_VS = (VGA_EN | SW[3]) ? 1'bZ      : ((vga_fb | vga_scaler) ? ~vgas_vs : ~vga_vs) | csync_en;
 	assign VGA_HS = (VGA_EN | SW[3]) ? 1'bZ      :  (vga_fb | vga_scaler) ? (csync_en ? ~vgas_cs : ~vgas_hs) : (csync_en ? ~vga_cs : ~vga_hs);
 	assign VGA_R  = (VGA_EN | SW[3]) ? 6'bZZZZZZ :  (vga_fb | vga_scaler) ? vgas_o[23:18] : vga_o[23:18];
