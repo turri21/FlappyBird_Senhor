@@ -1,6 +1,8 @@
 -=(Flappy Bird_Senhor notes)=-
 
-Tested: Working Video 720p, 1080p & Sound. You have to use a gamepad to play or you may redefine the keyboard keys through Flappy Bird's menu.
+Tested: Working Video 720p, 1080p & Sound. 
+
+You have to use a gamepad to play or you may redefine the keyboard keys through Flappy Bird's menu.
 
 # Flappy Bird
 
